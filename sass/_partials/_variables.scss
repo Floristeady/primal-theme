@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */ 
+   
+$global-width: 64em; //1024px
+
+// Colors & Fonts
+// -----------
+
+$primary-color: #f8e71d;
+$secundary-color: #0f683a;
+$black: #0a0a0a;
+$white: #fefefe;
+
+
+$body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+
+
+// The Grid
+// -----------
+
+$grid-row-width: $global-width;
+$grid-column-count: 12;
+$grid-column-gutter: 30px;
+$block-grid-max: 6;

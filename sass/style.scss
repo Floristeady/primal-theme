@@ -1,0 +1,362 @@
+/*
+	Theme Name: Primal Theme
+	Theme URI: https://github.com/floristeady/primal-theme
+	Description: Primal Theme for Primal Food
+	Author: Corpspin 
+	Author URI: http://www.corpspin.com
+	Version: 1.0
+	License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Tags: html5, responsive web design, media queries, one menus, footer widget, admin panel.
+*/
+
+@import "compass";
+@import "compass/reset";
+
+// Third-party libraries
+@import 'normalize';
+
+// Here we import our partials
+@import "_partials/variables";
+@import "_partials/typography";
+@import "_partials/grid";
+@import "_partials/visibility";
+
+/* ==========================================================================
+   General
+   ========================================================================== */
+
+body, html {
+	font-family: 'Gotham';
+	font-size: 100%;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+	font-family: 'Gotham';
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+}
+
+/* Placeholder text color -- selectors need to be separate to work. */
+
+#search-container ::-webkit-input-placeholder {
+	color: #222222;
+}
+
+#search-container :-moz-placeholder {
+	color: #222222;
+}
+
+#search-container ::-moz-placeholder {
+	color: #222222;
+	opacity: 1; /* Since FF19 lowers the opacity of the placeholder by default */
+}
+
+#search-container :-ms-input-placeholder {
+	color: #222222;
+}
+
+/* ==========================================================================
+   Structure, Header & Footer
+   ========================================================================== */
+ 
+#main {
+	clear: both;
+}
+
+.header-top {
+	width: 100%;
+	float: left;
+	
+	.widget-header {
+		float: right;
+		padding: .5rem 0;
+		margin-right: 1rem;
+	}
+}
+  
+.header-main {
+	background: $primary-color;
+	width: 100%;
+	float: left;
+	position: relative;
+	
+	.widget-header {
+		float: left;
+		position: absolute;
+		top:1rem;
+		right: 0;
+	}
+}
+
+#logo-container {
+	position: relative;
+	text-align: center;
+	width: 15%;
+    margin: 0 auto;
+	
+	.logo {
+		position: absolute;
+		text-align: center;
+		top: -1.8em;
+		left: 0;
+		right: 0;
+	}
+}
+
+#search-container {	
+	float: right;
+	padding: .6rem 0;
+	margin-right: 1rem;
+	
+	form {
+		float: left;
+	}
+	
+	&::after {
+		content: '|';
+		display: inline;
+		width: 1px;
+		float: right;
+		margin-left: .5rem;
+		padding-top: .2em;
+	}
+	
+	input[type=search] {
+		padding: .6rem .4rem .2rem;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: .8em;
+		border: none;
+		float: left;
+		width: 60px;
+		
+		&:focus {
+			outline: none;
+			width: 100px;
+		}
+	}
+	
+	input[type=submit] {
+		background: url(images/icon-search.svg);
+		width: 18px;
+		height: 18px;
+		display: inline-block;
+		text-indent: -999em;
+		border: none;
+		vertical-align: bottom;
+	}
+}
+
+#cart {
+	.text {	
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: .8em;
+		
+	}
+	.icon {
+		background: url(images/icon-cart.svg) no-repeat;
+		background-size: 100%;
+		width: 26px;
+		height: 26px;
+		display: inline-block;
+		vertical-align: bottom;
+		margin-left: .2rem;
+	}
+}
+
+#footer {
+	border-bottom: 40px solid $primary-color;
+	margin: 2rem 0 0;
+	
+	.footer-content {
+		padding-bottom: 1rem;
+	}
+	
+	p {
+		font-weight: 600;
+		font-size: .75rem;
+	}
+	
+	.widget-title, h4 {
+		font-weight: 700;
+		font-size: .9rem;
+		margin: 0 0 .2rem;
+	}
+	
+	.widget-footer #social-links {
+		float: left;
+		margin: 0;
+	}
+	
+	.widget-footer {
+		padding: 0;
+		
+		&.border-bottom::after {
+			border-bottom: 1px solid #222;
+			content: '';
+			width: 30%;
+			display: inline-block;
+		}
+	}
+	
+	.menu {
+		li {
+			display: inline;
+			float: left;
+			width: 30%;
+			
+			a {
+				font-weight: 700;
+				font-size: .85rem;
+				text-transform: uppercase;
+			}
+			
+			&::after {
+				border-bottom: 1px solid #222;
+				content: '';
+				width: 30%;
+				display: block;
+				clear: both;
+				padding-bottom: .6rem;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Links & Navigation
+   ========================================================================== */ 
+
+a { 
+	color: #282827;
+	text-decoration: none; 
+	
+	&:visited { 
+		color: #282827; }
+	&:hover { 
+		color: #5b5b54; 
+		text-decoration: none; }
+	&:focus { 
+		outline: 0; }
+	&:hover, &:active { 
+		outline: 0; }  
+}
+   
+#access {
+	display: block;
+	
+	ul {
+		padding: 1rem 0;
+		margin: 0;
+		text-align: center;
+	}
+	
+	li {
+		display: inline-block;
+		text-align: center;
+		
+		&.current_page_item a,
+		&.current-page-ancestor a a {
+			
+		}
+		
+		a {
+			color: #282827;
+			font-weight: 700;
+			text-transform: uppercase;
+			font-size: 1.1em;
+			padding: 0px 10px;
+			margin: 0px 4px;
+			position: relative;
+			
+			&:hover:after {
+				position: absolute;
+				content: '_';
+				display: inline-block;
+				text-align: center;
+				clear: both;
+				bottom: -8px;
+				left: 0;
+				right: 0;
+				font-weight: 300;
+			}
+		
+		} 
+	} 
+	
+	#menu-menu-izquierda {
+		float: right;
+	}
+	
+	#menu-menu-derecha {
+		float: left;
+	}
+}
+
+#social-links {
+	margin: 0 1em;
+	float: right;
+	
+	li {
+		display: inline-block;
+				
+		a {
+		    display: block;
+		    float: left;
+		    width: 24px;
+		    height: 24px;
+		    background-image: url(images/icons-social.svg);
+		    background-repeat: no-repeat;
+		    background-size: 420%;
+		    text-indent: -9999px;
+		    margin: 0px 3px 0 0;
+		    
+		    &:hover {
+			    opacity: .8;
+		    }
+		     
+		}
+		
+		&.facebook-link a {
+			background-position: left center;
+		}
+		
+		&.instagram-link a {
+			background-position: -25px center;
+		}
+		
+		&.youtube-link a {
+			background-position: -50px center;
+		}
+		
+		&.twitter-link a {
+			background-position: -75px center;
+		}
+	}
+}
+   
+/* ==========================================================================
+   Pages Content
+   ========================================================================== */
+   
+   
+/* ==========================================================================
+   Helpers & Transitions
+   ========================================================================== */ 
+   
+   
+/* ==========================================================================
+   Widgets & Plugins
+   ========================================================================== */
