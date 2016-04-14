@@ -21,7 +21,35 @@ jQuery(function ($) {
 	}
 	
 	function onLoadAndResize(){  
+		getbrowserwidth();
+		homeGallery();
+	}
 	
+	function homeGallery() {  
+		
+		$('#home-gallery').flexslider({
+		    animation: "fade",
+		    animationLoop: true,
+		    controlNav: false,
+		    directionNav: true,
+		    smoothHeight: true,
+		    start: function(slider){
+			     $('#home-gallery .inner').animate({
+				   opacity: 1 
+			    });
+			    
+			    if (!('.flexslider ul.slides li:only-child')){
+				     $('#home-gallery .inner').delay(500).animate({
+					   opacity: 1 
+				    }, 400);
+			    } else {
+				      $('#home-gallery .inner').delay(700).animate({
+					   opacity: 1 
+				    }, 400);
+
+			    }
+		    }
+		});
 	}
 
 

@@ -31,7 +31,8 @@ function primal_setup() {
 	
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
-	//add_image_size( 'primal-full-width', 1024, 576, true );
+	add_image_size( 'homeslide', 1280, 500, true );
+	add_image_size( 'blog-thumb', 360, 220, true );
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory

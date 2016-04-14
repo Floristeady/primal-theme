@@ -22,6 +22,10 @@ $grid-column-gutter: 30px !default;
 /// @type Number
 $block-grid-max: 6 !default;
 
+div, span, li, a {
+	box-sizing: border-box;
+}
+
 .row {
   max-width: $global-width;
   margin-left: auto;
@@ -56,7 +60,8 @@ $block-grid-max: 6 !default;
   width: 100%;
   float: left;
   padding-left: 0.625rem;
-  padding-right: 0.625rem; }
+  padding-right: 0.625rem; 
+  }
   @media screen and (min-width: 40em) {
     .column, .columns {
       padding-left: 0.9375rem;
