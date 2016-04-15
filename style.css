@@ -511,15 +511,19 @@ address {
   font-size: 0.85em;
   font-style: italic; }
 
+/* line 76, sass/_partials/_typography.scss */
+small {
+  font-size: 70%; }
+
 /*
  * Headers
  */
-/* line 80, sass/_partials/_typography.scss */
+/* line 84, sass/_partials/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: 'Gotham'; }
 
-/* line 85, sass/_partials/_typography.scss */
+/* line 89, sass/_partials/_typography.scss */
 h1 {
   color: #1d1d1d;
   font-size: 2.4em;
@@ -527,39 +531,39 @@ h1 {
   line-height: 1.1em;
   font-weight: 700;
   letter-spacing: 1rem; }
-  /* line 93, sass/_partials/_typography.scss */
+  /* line 97, sass/_partials/_typography.scss */
   .home-section h1 {
     text-transform: uppercase;
     text-align: center; }
 
-/* line 99, sass/_partials/_typography.scss */
+/* line 103, sass/_partials/_typography.scss */
 h2 {
   color: #1d1d1d;
   font-size: 1.5em;
   margin: .9rem 0;
   line-height: 1.3em; }
 
-/* line 106, sass/_partials/_typography.scss */
+/* line 110, sass/_partials/_typography.scss */
 h3 {
   color: #202020;
   font-size: 1.1em;
   line-height: 1.3em;
   margin: .8rem 0; }
 
-/* line 113, sass/_partials/_typography.scss */
+/* line 117, sass/_partials/_typography.scss */
 h4 {
   color: #202020;
   font-size: 0.94em;
   line-height: 1.125em;
   margin: .7rem 0; }
 
-/* line 120, sass/_partials/_typography.scss */
+/* line 124, sass/_partials/_typography.scss */
 h5 {
   color: #202020;
   font-size: 0.9em;
   margin: .7rem 0; }
 
-/* line 126, sass/_partials/_typography.scss */
+/* line 130, sass/_partials/_typography.scss */
 h6 {
   color: #202020;
   font-size: 0.85em;
@@ -2522,60 +2526,83 @@ button, .button {
     /* line 451, sass/style.scss */
     #home-gallery .flex-control-nav {
       display: none; } }
+  /* line 455, sass/style.scss */
+  #home-gallery .scroll {
+    position: absolute;
+    bottom: 1rem;
+    z-index: 100;
+    text-align: center;
+    left: 0;
+    right: 0; }
+    /* line 463, sass/style.scss */
+    #home-gallery .scroll .icon-scroll {
+      background: url(images/icon-scroll.svg) no-repeat;
+      width: 30px;
+      height: 46px;
+      display: block;
+      margin: 0 auto; }
+    /* line 471, sass/style.scss */
+    #home-gallery .scroll small {
+      text-align: center;
+      font-size: 50%;
+      color: white;
+      clear: both;
+      letter-spacing: .6rem; }
 
-/* line 457, sass/style.scss */
+/* line 481, sass/style.scss */
 #primary {
   float: left;
   width: 100%;
-  padding: 4rem 0 0;
-  background: url("images/repeat-form.jpg") repeat; }
-  /* line 461, sass/style.scss */
+  padding: 8rem 0 8rem 0;
+  background: url("images/repeat-form.jpg") repeat;
+  position: relative; }
+  /* line 486, sass/style.scss */
   #primary .primary-icons img {
     margin: 2.5rem .5rem; }
 
-/* line 467, sass/style.scss */
+/* line 492, sass/style.scss */
 #featured-products {
   float: left;
   width: 100%;
   padding: 4rem 0 0; }
 
-/* line 472, sass/style.scss */
+/* line 497, sass/style.scss */
 #suscribe {
   float: left;
   width: 100%;
   padding: 4rem 0 5rem 0; }
-  /* line 475, sass/style.scss */
+  /* line 500, sass/style.scss */
   #suscribe p {
     text-align: center;
     width: 50%;
     margin: 0 auto; }
-  /* line 481, sass/style.scss */
+  /* line 506, sass/style.scss */
   #suscribe form {
     text-align: center;
     margin: 1rem 0; }
-    /* line 485, sass/style.scss */
+    /* line 510, sass/style.scss */
     #suscribe form input[type="email"] {
       background: #f8e71d;
       padding: .5rem;
       font-size: 2rem;
       border: none;
       width: 70%; }
-      /* line 492, sass/style.scss */
+      /* line 517, sass/style.scss */
       #suscribe form input[type="email"]:focus {
         outline: none;
         opacity: .8; }
-    /* line 498, sass/style.scss */
+    /* line 523, sass/style.scss */
     #suscribe form input[type="submit"] {
       background: #222;
       padding: .5rem;
       font-size: 2rem;
       border: none;
       color: white; }
-      /* line 505, sass/style.scss */
+      /* line 530, sass/style.scss */
       #suscribe form input[type="submit"]:hover {
         background: black; }
 
-/* line 512, sass/style.scss */
+/* line 537, sass/style.scss */
 #featured-blog {
   float: left;
   width: 100%;
@@ -2583,40 +2610,40 @@ button, .button {
   background: url("images/repeat-form.jpg") repeat;
   text-align: center;
   position: relative; }
-  /* line 518, sass/style.scss */
+  /* line 543, sass/style.scss */
   #featured-blog .button {
     display: inline-block;
     margin: 0 auto 1rem; }
-  /* line 523, sass/style.scss */
+  /* line 548, sass/style.scss */
   #featured-blog .title {
     text-align: center;
     margin: 0 auto; }
   @media only screen and (min-width: 60em) {
-    /* line 529, sass/style.scss */
+    /* line 554, sass/style.scss */
     #featured-blog .title {
       position: absolute;
       top: 10%;
       left: 0;
       right: 0; }
-      /* line 535, sass/style.scss */
+      /* line 560, sass/style.scss */
       #featured-blog .title h1 {
         width: 30%;
         margin: 0 auto; }
-      /* line 540, sass/style.scss */
+      /* line 565, sass/style.scss */
       #featured-blog .title .button {
         margin: 1rem auto; } }
 
 @media only screen and (min-width: 60em) {
-  /* line 549, sass/style.scss */
+  /* line 574, sass/style.scss */
   .home #blog-items li:nth-child(2) {
     margin: 12rem 0 0; } }
-/* line 555, sass/style.scss */
+/* line 580, sass/style.scss */
 .home #blog-items li:nth-child(2) .post-thumbnail {
   position: relative;
   display: block;
   max-width: 352px;
   margin: 0 auto; }
-/* line 562, sass/style.scss */
+/* line 587, sass/style.scss */
 .home #blog-items li:nth-child(2) .post-thumbnail::before {
   content: '';
   position: absolute;
@@ -2627,10 +2654,10 @@ button, .button {
   border-top: 8px solid #f8e71d;
   width: 80%;
   height: 85%; }
-/* line 575, sass/style.scss */
+/* line 600, sass/style.scss */
 #blog-items .inner {
   text-align: center; }
-  /* line 578, sass/style.scss */
+  /* line 603, sass/style.scss */
   #blog-items .inner h2 {
     text-transform: uppercase;
     font-weight: 700;
@@ -2638,12 +2665,12 @@ button, .button {
     margin: .2rem auto;
     font-size: 1rem;
     letter-spacing: .1rem; }
-  /* line 587, sass/style.scss */
+  /* line 612, sass/style.scss */
   #blog-items .inner a.button-simple {
     text-transform: uppercase;
     font-weight: 700;
     font-size: .65rem; }
-    /* line 592, sass/style.scss */
+    /* line 617, sass/style.scss */
     #blog-items .inner a.button-simple::before {
       content: '';
       display: block;
@@ -2651,18 +2678,81 @@ button, .button {
       width: 40%;
       clear: both;
       margin: .6rem auto; }
-  /* line 602, sass/style.scss */
+  /* line 627, sass/style.scss */
   #blog-items .inner img {
     max-width: 100%; }
+
+/* line 633, sass/style.scss */
+#section-social {
+  float: left;
+  width: 100%;
+  padding: 4rem 0 3rem 0;
+  background: url("images/repeat-form.jpg") repeat;
+  text-align: center;
+  position: relative; }
+  /* line 639, sass/style.scss */
+  #section-social .title {
+    width: 40%;
+    margin: 0 auto 2rem;
+    text-align: center; }
+    /* line 644, sass/style.scss */
+    #section-social .title h1 {
+      margin: 0; }
+      /* line 647, sass/style.scss */
+      #section-social .title h1 span {
+        color: #f8e71d; }
+    /* line 653, sass/style.scss */
+    #section-social .title p {
+      font-weight: bold;
+      letter-spacing: .2rem;
+      color: #515151;
+      font-size: .7rem; }
+  /* line 661, sass/style.scss */
+  #section-social .bottom {
+    position: relative;
+    width: 100%;
+    float: left; }
+    /* line 666, sass/style.scss */
+    #section-social .bottom .hashtag {
+      margin: 0;
+      font-weight: bold;
+      letter-spacing: .2rem;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      position: relative;
+      z-index: 1; }
+
+/* line 679, sass/style.scss */
+#polaroid-ul {
+  border-top: 8px solid #f8e71d; }
+  /* line 682, sass/style.scss */
+  #polaroid-ul li {
+    margin-top: -18px;
+    width: 33%;
+    float: left;
+    display: inline-block !important; }
+    /* line 688, sass/style.scss */
+    #polaroid-ul li a {
+      float: left;
+      width: 100%; }
+    /* line 693, sass/style.scss */
+    #polaroid-ul li img {
+      min-width: 256px; }
+    /* line 697, sass/style.scss */
+    #polaroid-ul li:hover {
+      opacity: .8; }
+  /* line 702, sass/style.scss */
+  #polaroid-ul li:nth-child(3n) img {
+    top: 0 !important; }
 
 /* ==========================================================================
    Pages Content
    ========================================================================== */
-/* line 616, sass/style.scss */
+/* line 716, sass/style.scss */
 .entry-content img.alignright {
   text-align: right;
   float: right; }
-/* line 621, sass/style.scss */
+/* line 721, sass/style.scss */
 .entry-content img.alignleft {
   text-align: left;
   float: left; }
@@ -2670,6 +2760,28 @@ button, .button {
 /* ==========================================================================
    Helpers & Transitions
    ========================================================================== */
+/* line 734, sass/style.scss */
+.line-yellow:after {
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  top: -16px;
+  bottom: 0;
+  left: 50%;
+  height: 30%;
+  border-left: 6px solid #f8e71d; }
+
+/* line 745, sass/style.scss */
+.line-yellow-left:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -50px;
+  bottom: 0;
+  left: 41%;
+  height: 400%;
+  border-left: 6px solid #f8e71d; }
+
 /* ==========================================================================
    Widgets & Plugins
    ========================================================================== */

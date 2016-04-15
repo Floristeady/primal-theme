@@ -452,11 +452,36 @@ button, .button {
 			display: none;}
 	}
 	
+	.scroll {
+		position: absolute;
+		bottom: 1rem;
+		z-index: 100;
+		text-align: center;
+		left: 0;
+		right: 0;
+		
+		.icon-scroll {
+			background: url(images/icon-scroll.svg) no-repeat;
+			width: 30px;
+			height: 46px;
+			display: block;
+			margin: 0 auto;
+		}
+		
+		small {
+			text-align: center;
+			font-size: 50%;
+			color: white;
+			clear: both;
+			letter-spacing: .6rem;
+		}	
+	}
 }
 
 #primary {
-	@include section(4rem 0); 
+	@include section(8rem 0 8rem); 
 	@include back-repeat();
+	position: relative;
 	
 	.primary-icons img {
 		margin: 2.5rem .5rem;
@@ -605,6 +630,81 @@ button, .button {
 	}
 }
 
+#section-social {
+	@include section(4rem 0 3rem); 
+	@include back-repeat();
+	text-align: center;
+	position: relative;
+	
+	.title {
+		width: 40%;
+		margin: 0 auto 2rem;
+		text-align: center;
+		
+		h1 {
+			margin: 0;
+			
+		  span {
+			color: $primary-color;
+			}
+			
+		}
+		
+		p {
+			font-weight: bold;
+			letter-spacing: .2rem;
+			color: #515151;
+			font-size: .7rem;
+		}
+		
+	}
+	.bottom {
+		position: relative;
+		width: 100%;
+		float: left;
+		
+		.hashtag {
+			margin: 0;
+			font-weight: bold;
+			letter-spacing: .2rem;
+			text-transform: uppercase;
+			font-size: 1.1rem;
+			position: relative;
+			z-index: 1;
+		}
+	}
+	
+}
+
+#polaroid-ul {
+	border-top: 8px solid $primary-color;
+	
+	li {
+		margin-top: -18px;
+		width: 33%;
+		float: left;
+		display: inline-block !important;
+		
+		a {
+			float: left;
+			width: 100%;
+		}
+		
+		img {
+			min-width: 256px;
+		}
+		
+		&:hover {
+			opacity: .8;
+		}
+	}
+	
+	li:nth-child(3n) img {
+		top:0 !important;
+	}
+	
+	
+}
 
 /* ==========================================================================
    Pages Content
@@ -630,7 +730,28 @@ button, .button {
 /* ==========================================================================
    Helpers & Transitions
    ========================================================================== */ 
-   
+
+.line-yellow:after {
+    content:"";
+    position: absolute;
+    z-index: 1000;
+    top: -16px;
+    bottom: 0;
+    left: 50%;
+    height: 30%;
+    border-left: 6px solid $primary-color;
+}
+
+.line-yellow-left:after {
+    content:"";
+    position: absolute;
+    z-index: 0;
+    top:-50px;
+    bottom: 0;
+    left: 41%;
+    height: 400%;
+    border-left: 6px solid $primary-color;
+}
    
 /* ==========================================================================
    Widgets & Plugins

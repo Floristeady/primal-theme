@@ -48,84 +48,27 @@ get_header(); ?>
 					</li>				
 					<?php } ?>
 				</ul>
+				<div class="scroll">
+					<span class="icon-scroll"></span>
+					<small>SCROLL DOWN</small>
+				</div>
 		</section>
 		<?php } ?>
 		
-		<section id="primary" class="home-section">
+		<section id="primary" class="home-section line-yellow">
 			<div class="entry-content row">
 				<?php the_content(); ?>
 			</div>
-		</section>
+		</section>		
 		
-		<section id="featured-products" class="home-section hide">
-			<div class="row">
-				<div class="column medium-12 small-centered">
-					<h1>NUESTROS PRODUCTOS</h1>
-				</div>
-			</div>
-			
-		</section>
-		
-		<section id="suscribe" class="home-section">
-			
-			<div class="row">
-				<div class="column medium-12 small-centered">
-					<h1>Suscríbete</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pretium ante at convallis mattis. Proin a mauris scelerisque, malesuada nisl sed.
-</p>
-					<form>
-						<input type="email">
-						<input type="submit" value="GO">
-					</form>
-				</div>
-			</div>
-			
-		</section>
-		
-		<?php 
-	    $args = array(
-		'post_type'	=> 'post',
-		'post_status' => 'publish',
-		'posts_per_page' => 3,
-		'orderby' => 'date',
-		'order' => 'DESC',
-		'offset' => 0
-		 );
-		 $last_post = new WP_Query( $args );
-		?>
-
-		<?php if ( $last_post ->have_posts() ) : ?>
-		
-		<section id="featured-blog" class="home-section">
-			
-			<div class="column medium-11 small-centered">
+		<?php include('inc/featured-products.php'); ?>
 				
-				<div class="title">
-					
-					<?php $posts_page = get_option( 'page_for_posts' );
-					$content = get_post( $posts_page )->post_excerpt; 
-					$title   = get_post( $posts_page )->post_title; ?>
-					<h1><?php echo $title; ?></h1>
-					<a href="<?php echo get_permalink( get_page_by_path( 'nuestro-blog' ) ) ?>" class="button"><?php _e('Ver Todo','primal') ?></a>
-					
-				</div>
+		<?php include('inc/section-subscribe.php'); ?>
+		
+		<?php include('inc/featured-blog.php'); ?>
+		
+		<?php include('inc/section-social.php'); ?>
 				
-				<ul id="blog-items" class="small-up-1 medium-up-2 large-up-3">
-			
-				<?php while ( $last_post ->have_posts() ) : $last_post ->the_post(); 
-					
-					get_template_part( 'content');
-					
-				 endwhile; wp_reset_postdata(); ?>
-				 <?php wp_reset_query(); ?>
-				</ul>
-			</div>
-			
-		</section>
-		<? endif; ?>
-		
-		
-			
 	<?php endwhile; ?>
 
 </div><!-- #content -->
