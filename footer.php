@@ -22,5 +22,6 @@
 	</section><!-- #main -->
 	
 	<?php wp_footer(); ?>
+	<script src="https://du8eo9nh88b2j.cloudfront.net/libs/0.0.2/search_widget.min.js" type="text/javascript"></script>
 	</body>
 </html>

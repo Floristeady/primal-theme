@@ -1,4 +1,4 @@
-<section id="section-social" class="home-section">
+<section id="id-social" class="id-social home-section">
 			
 	<div class="row">
 		<div class="column medium-12 small-centered">

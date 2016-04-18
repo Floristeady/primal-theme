@@ -22,7 +22,7 @@ $grid-column-gutter: 30px !default;
 /// @type Number
 $block-grid-max: 6 !default;
 
-div, span, li, a {
+div, span, li, a, img, ul {
 	box-sizing: border-box;
 }
 

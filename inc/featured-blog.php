@@ -12,7 +12,7 @@ $args = array(
 
 <?php if ( $last_post ->have_posts() ) : ?>
 
-<section id="featured-blog" class="home-section">
+<section id="id-blog" class="id-blog home-section">
 	
 	<div class="column medium-11 small-centered">
 		

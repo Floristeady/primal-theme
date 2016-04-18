@@ -35,6 +35,10 @@ body, html {
     padding: 0;
 }
 
+body {
+	background: white;
+}
+
 a,
 button,
 input,
@@ -99,6 +103,16 @@ button, .button {
 		background: $primary-color;
 	}
 }   
+
+.other-button {
+	background: $primary-color;
+	font-size: .75rem;
+	font-weight: bold;
+	display: inline-block;
+	padding: .5rem .5rem .4rem;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+}
    
 #access {
 	display: block;
@@ -205,6 +219,7 @@ button, .button {
 .header-top {
 	width: 100%;
 	float: left;
+	background: white;
 	
 	.widget-header {
 		float: right;
@@ -311,6 +326,10 @@ button, .button {
 	clear: both;
     float: left;
     width: 100%;
+    
+    @media only screen and (max-width: $small-width) {
+	    text-align: center;
+    }
 	
 	.footer-content {
 		padding-bottom: 1rem;
@@ -330,10 +349,14 @@ button, .button {
 	.widget-footer #social-links {
 		float: left;
 		margin: 0;
+		
+		 @media only screen and (max-width: $small-width) {
+			 margin: 0 auto;
+			 float: none;
+		 }
 	}
 	
 	.widget-footer {
-		padding: 0;
 		
 		&.border-bottom::after {
 			border-bottom: 1px solid #222;
@@ -347,7 +370,9 @@ button, .button {
 		li {
 			display: inline;
 			float: left;
-			width: 30%;
+			width: 33.3%;
+			padding-left: 0.9375rem;
+			padding-right: 0.9375rem;
 			
 			a {
 				font-weight: 700;
@@ -479,28 +504,128 @@ button, .button {
 }
 
 #primary {
-	@include section(8rem 0 8rem); 
+	@include section(2rem 0 2rem); 
+	
+	@media only screen and (min-width: $medium-width) {
+		@include section(8rem 0 8rem); 
+	}
+	
 	@include back-repeat();
 	position: relative;
 	
-	.primary-icons img {
-		margin: 2.5rem .5rem;
+	.primary-icons { 
+		
+		img {
+			margin: 2.5rem .8rem;			
+		}
+		
+		@media only screen and (max-width: $small-width) {
+			
+			text-align: center;
+			
+				img {
+					float: none !important;
+					margin: 2.5rem .5rem;
+				}
+			}
 	}
 }
 
 
-#featured-products {	
-	@include section(4rem 0); 
+#id-products {	
+	@include section(1rem 0 1rem); 
 	
+	@media only screen and (min-width: $medium-width) {
+		@include section(3rem 0 1rem); 
+	}
+	
+	text-align: center;
+	position: relative;
+	
+	&.line-yellow:after {
+		top:-10%;
+		
+		@media only screen and (max-width: $large-width) {
+			height: 10%;
+			top:-5%;
+		}
+	}
+	
+	.title {
+		margin: 0 0 2rem;
+		
+		h1 {
+			margin-bottom: 1rem;
+			
+			@media only screen and (min-width: $medium-width) {
+				margin-left: 3rem;
+				margin-bottom: 3rem;
+			}
+		}
+		
+		span {
+			@media only screen and (min-width: $medium-width) {
+				margin-left: 4rem;
+				}
+		}
+	}
+	
+	.products {
+		
+		margin: 2rem 0 0;
+		float: left;
+		width: 100%;
+		
+		.info {
+			h3 {
+				font-weight: 700;
+				text-transform: uppercase;
+				margin-bottom: .3rem;
+			}
+			
+			.price {
+				font-size: .85rem;
+				font-weight: 700;
+				letter-spacing: .1rem;
+			}
+		}
+		
+		.other-button {
+			margin: .5rem 0 0;
+		}
+		
+		img {
+			max-height: 200px;
+		}
+		
+		li .inner {
+			margin: 0 0 1.5rem;
+		}
+		
+		@media only screen and (min-width: $large-width) {
+		
+			li:nth-child(3) {
+				
+				margin: -2rem 0 0;
+				
+				img {
+					max-height: 300px;
+				}
+			}
+		}
+	}	
 }
 
-#suscribe {
-	@include section(4rem 0 5rem); 
+#id-suscribe {
+	@include section(3rem 0 5rem); 
 	
 	p {
 		text-align: center;
-		width: 50%;
 		margin: 0 auto;
+		
+		@media only screen and (min-width: $medium-width) {
+			width: 50%;
+		}
 	}
 	
 	form {
@@ -534,8 +659,14 @@ button, .button {
 	}
 }
 
-#featured-blog {
-	@include section(4rem 0 5rem); 
+#id-blog {
+	
+	@include section(0); 
+	
+	@media only screen and (min-width: $medium-width) {
+		@include section(4rem 0 5rem); 
+	}
+
 	@include back-repeat();
 	text-align: center;
 	position: relative;
@@ -599,6 +730,11 @@ button, .button {
 	
 	.inner {
 		text-align: center;
+		margin: 0 0 2rem;
+		
+		@media only screen and (min-width: $medium-width) {
+			margin: 0;
+		}
 	 
 		 h2 {
 			 text-transform: uppercase;
@@ -630,7 +766,7 @@ button, .button {
 	}
 }
 
-#section-social {
+#id-social {
 	@include section(4rem 0 3rem); 
 	@include back-repeat();
 	text-align: center;
@@ -681,10 +817,14 @@ button, .button {
 	
 	li {
 		margin-top: -18px;
-		width: 33%;
 		float: left;
 		display: inline-block !important;
-		
+		width: 50%;
+			
+		@media only screen and (min-width: $medium-width) {
+			width: 33%;
+		}
+			
 		a {
 			float: left;
 			width: 100%;
@@ -692,6 +832,12 @@ button, .button {
 		
 		img {
 			min-width: 256px;
+			
+			@media only screen and (max-width: $medium-width) {
+				margin: 0 !important;
+				width: 100% !important;
+				min-width: inherit;
+			}
 		}
 		
 		&:hover {
@@ -730,6 +876,15 @@ button, .button {
 /* ==========================================================================
    Helpers & Transitions
    ========================================================================== */ 
+
+.icon-arrow {
+	background: url(images/icon-arrow.svg);
+	width: 28px;
+	height: 100px;
+	display: inline-block;
+	text-align: center;
+	margin: 3rem auto 1rem;
+}
 
 .line-yellow:after {
     content:"";

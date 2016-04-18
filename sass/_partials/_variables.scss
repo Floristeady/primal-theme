@@ -31,7 +31,7 @@ $block-grid-max: 6;
 @mixin section($pad) {
 	float: left;
 	width: 100%;
-	padding: $pad 0;
+	padding: $pad;
 }
 
 @mixin back-repeat() {
