@@ -26,6 +26,10 @@ jQuery(function ($) {
 	function onLoadAndResize(){  
 		getbrowserwidth();
 		homeGallery();
+		
+		if(browserwidth <= mediumwidth ) {
+	       menuMobile();
+	    }
 	}
 	
 	function homeGallery() {  
@@ -59,16 +63,21 @@ jQuery(function ($) {
 	function menuHome() { 
 		
 		//si es el home		
-		var links = $('.menu-main > .menu > li > a');
+		var links = $('.menu-main > .menu > li > a, .menu-header a');
 	    var target = $(links).attr("href");
-		
-		console.log(target);
+				
 		// go to scroll section 
 	    function goToByScroll(target) {
 	        htmlbody.animate({
 	         scrollTop: $(target).offset().top+5
 	         }, 1500, 'easeInOutQuint');
 	         
+	        if(browserwidth <= mediumwidth) {
+	        	$('#inner-wrap').removeClass('active');
+				$('#mobile-access').removeClass('active');
+				$('body').removeClass('open-drawer');
+				//console.log(target);
+		    } 
 	    }
 	
 		// link animation to section
@@ -83,14 +92,18 @@ jQuery(function ($) {
 	function menuPages() {
 		
 		//Menu pages 
-		var _href = $('.menu-main > .menu > li > a');
+		var _href = $('.menu-main > .menu > li > a, .menu-header a');
 		var page = $("html, body");
 		
 		$(_href).each(function() {
 		   _href = $(this).attr("href"); 
 		   $(this).attr("href",'/'+ _href);  
 		   
-		   //console.log(_href);
+		   if(browserwidth <= mediumwidth) {
+	        	$('#inner-wrap').removeClass('active');
+				$('#mobile-access').removeClass('active');
+				$('body').removeClass('open-drawer');
+		    }
 		});
 		
 	    var jump=function(e) {
@@ -126,6 +139,31 @@ jQuery(function ($) {
           page.show()
         }
 
+	}
+	
+	function menuMobile(){
+
+    	$(document).off('click', '#button-mobile').on('click', '#button-mobile',function(e) {
+	        allowSubmit = true;
+           $('#mobile-access').addClass('active');
+           $('#inner-wrap').addClass('active');
+           $('body').addClass('open-drawer');
+          
+           addEventListener('touchmove', function(e) { 
+            if (allowSubmit) {
+              //e.preventDefault(); 
+           }
+	        }, true);
+	    }); 
+      
+	    $('#nav-close-btn, .drawer-close').bind('click focus', function(e){ 
+	        allowSubmit = false;
+	        $('#inner-wrap').removeClass('active');
+	        $('#mobile-access').removeClass('active');
+	        $('body').removeClass('open-drawer');
+	        e.preventDefault();
+	    }); 
+	  
 	}
 
 	/************************* 

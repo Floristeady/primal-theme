@@ -47,6 +47,7 @@ function primal_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'primal' ),
 		'secondary' => __( 'Secondary Navigation', 'primal' ),
+		'mobile' => __( 'Mobile Navigation', 'primal' ),
 	) );
 	
 	/*

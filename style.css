@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 	Theme Name: Primal Theme
 	Theme URI: https://github.com/floristeady/primal-theme
@@ -535,7 +536,7 @@ h1 {
   .home-section h1 {
     text-transform: uppercase;
     text-align: center; }
-  @media only screen and (min-width: 40.063em) {
+  @media only screen and (min-width: 40em) {
     /* line 89, sass/_partials/_typography.scss */
     h1 {
       font-size: 2.4em;
@@ -2267,11 +2268,15 @@ button, .button {
       color: #282827;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 1.1em;
+      font-size: .95em;
       padding: 0px 10px;
       margin: 0px 4px;
       position: relative; }
-      /* line 144, sass/style.scss */
+      @media only screen and (min-width: 60em) {
+        /* line 135, sass/style.scss */
+        #access li a {
+          font-size: 1.1em; } }
+      /* line 148, sass/style.scss */
       #access li a:hover:after {
         position: absolute;
         content: '_';
@@ -2282,21 +2287,29 @@ button, .button {
         left: 0;
         right: 0;
         font-weight: 300; }
-  /* line 159, sass/style.scss */
+  /* line 163, sass/style.scss */
   #access #menu-menu-izquierda {
     float: right; }
-  /* line 163, sass/style.scss */
+  /* line 167, sass/style.scss */
   #access #menu-menu-derecha {
     float: left; }
+  @media only screen and (max-width: 40em) {
+    /* line 172, sass/style.scss */
+    #access .menu {
+      display: none; } }
 
-/* line 168, sass/style.scss */
+/* line 178, sass/style.scss */
 #social-links {
   margin: 0 1em;
   float: right; }
-  /* line 172, sass/style.scss */
+  @media only screen and (max-width: 68.75em) {
+    /* line 182, sass/style.scss */
+    .header-main #social-links {
+      display: none; } }
+  /* line 189, sass/style.scss */
   #social-links li {
     display: inline-block; }
-    /* line 175, sass/style.scss */
+    /* line 192, sass/style.scss */
     #social-links li a {
       display: block;
       float: left;
@@ -2307,77 +2320,200 @@ button, .button {
       background-size: 420%;
       text-indent: -9999px;
       margin: 0px 3px 0 0; }
-      /* line 186, sass/style.scss */
+      /* line 203, sass/style.scss */
       #social-links li a:hover {
         opacity: .8; }
-    /* line 192, sass/style.scss */
+    /* line 208, sass/style.scss */
     #social-links li.facebook-link a {
       background-position: left center; }
-    /* line 196, sass/style.scss */
+    /* line 212, sass/style.scss */
     #social-links li.instagram-link a {
       background-position: -25px center; }
-    /* line 200, sass/style.scss */
+    /* line 216, sass/style.scss */
     #social-links li.youtube-link a {
       background-position: -50px center; }
-    /* line 204, sass/style.scss */
+    /* line 220, sass/style.scss */
     #social-links li.twitter-link a {
       background-position: -75px center; }
+
+/* line 226, sass/style.scss */
+#button-mobile {
+  padding: 18px 10px 10px 16px;
+  float: left;
+  width: 10%;
+  display: none; }
+  /* line 232, sass/style.scss */
+  #button-mobile .bars {
+    font-size: 1.2em;
+    float: left;
+    margin-right: .3em; }
+    /* line 237, sass/style.scss */
+    #button-mobile .bars div {
+      width: 1.1em;
+      height: 3px;
+      margin-bottom: 3px;
+      background: #282827;
+      border-radius: 1px; }
+  @media only screen and (max-width: 40em) {
+    /* line 226, sass/style.scss */
+    #button-mobile {
+      display: block; } }
+
+/* line 251, sass/style.scss */
+#inner-wrap {
+  z-index: 999; }
+  /* line 254, sass/style.scss */
+  #inner-wrap.active {
+    position: fixed;
+    height: 140%;
+    width: 100%;
+    background-attachment: fixed;
+    overflow-y: scroll;
+    –webkit-overflow-scrolling: touch; }
+
+/* line 264, sass/style.scss */
+.drawer-back {
+  background: rgba(0, 0, 0, 0.3);
+  height: 180%;
+  float: left;
+  width: 100%;
+  background-attachment: fixed; }
+
+/* line 272, sass/style.scss */
+#mobile-access {
+  background: #F8F9FA;
+  background-attachment: fixed;
+  position: absolute;
+  padding: 2em 0;
+  width: 75%;
+  height: 180%;
+  z-index: 1000;
+  left: -75%;
+  top: 0;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform: translate3d(0);
+  -moz-transform: translate3d(0);
+  transform: translate3d(0); }
+  /* line 290, sass/style.scss */
+  #mobile-access.active {
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); }
+  /* line 296, sass/style.scss */
+  #mobile-access ul {
+    margin: 2em 0 0; }
+    /* line 299, sass/style.scss */
+    #mobile-access ul li {
+      margin: 0 0 0.7em; }
+      /* line 302, sass/style.scss */
+      #mobile-access ul li a {
+        font-size: .9rem;
+        padding: 0 0 0 1.7em;
+        display: inline-block;
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 700; }
+
+/* line 314, sass/style.scss */
+#nav-close-btn {
+  position: absolute;
+  border-radius: 2px;
+  float: left;
+  top: 9px;
+  left: 16px;
+  width: 24px;
+  height: 24px; }
+  /* line 323, sass/style.scss */
+  #nav-close-btn:before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 2px; }
+  /* line 330, sass/style.scss */
+  #nav-close-btn:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 2px; }
+  /* line 337, sass/style.scss */
+  #nav-close-btn:before, #nav-close-btn:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #282827;
+    border-radius: 2px;
+    top: 16px; }
 
 /* ==========================================================================
    Structure, Header & Footer
    ========================================================================== */
-/* line 215, sass/style.scss */
+/* line 354, sass/style.scss */
 #main {
   clear: both; }
 
-/* line 219, sass/style.scss */
+/* line 358, sass/style.scss */
 .header-top {
   width: 100%;
   float: left;
   background: white; }
-  /* line 224, sass/style.scss */
+  /* line 363, sass/style.scss */
   .header-top .widget-header {
     float: right;
     padding: .5rem 0;
     margin-right: 1rem; }
 
-/* line 231, sass/style.scss */
+/* line 370, sass/style.scss */
 .header-main {
   background: #f8e71d;
   width: 100%;
   float: left;
   position: relative; }
-  /* line 237, sass/style.scss */
+  /* line 376, sass/style.scss */
   .header-main .widget-header {
     float: left;
     position: absolute;
     top: 1rem;
     right: 0; }
 
-/* line 245, sass/style.scss */
+/* line 384, sass/style.scss */
 #logo-container {
   position: relative;
   text-align: center;
-  width: 15%;
-  margin: 0 auto; }
-  /* line 251, sass/style.scss */
+  margin: 0 auto;
+  height: 80px; }
+  /* line 390, sass/style.scss */
   #logo-container .logo {
-    position: absolute;
     text-align: center;
-    top: -2.5em;
-    left: 0;
-    right: 0;
-    z-index: 100; }
+    position: relative;
+    z-index: 100;
+    top: -2.5em; }
+  @media only screen and (min-width: 40em) {
+    /* line 384, sass/style.scss */
+    #logo-container {
+      width: 15%;
+      height: auto; }
+      /* line 401, sass/style.scss */
+      #logo-container .logo {
+        position: absolute;
+        left: 0;
+        right: 0; } }
 
-/* line 261, sass/style.scss */
+/* line 410, sass/style.scss */
 #search-container {
   float: right;
   padding: .6rem 0;
   margin-right: 1rem; }
-  /* line 266, sass/style.scss */
+  @media only screen and (max-width: 40em) {
+    /* line 410, sass/style.scss */
+    #search-container {
+      display: none; } }
+  /* line 419, sass/style.scss */
   #search-container form {
     float: left; }
-  /* line 270, sass/style.scss */
+  /* line 423, sass/style.scss */
   #search-container::after {
     content: '|';
     display: inline;
@@ -2385,7 +2521,7 @@ button, .button {
     float: right;
     margin-left: .5rem;
     padding-top: .2em; }
-  /* line 279, sass/style.scss */
+  /* line 432, sass/style.scss */
   #search-container input[type=search] {
     padding: .6rem .4rem .2rem;
     text-transform: uppercase;
@@ -2394,11 +2530,11 @@ button, .button {
     border: none;
     float: left;
     width: 60px; }
-    /* line 288, sass/style.scss */
+    /* line 441, sass/style.scss */
     #search-container input[type=search]:focus {
       outline: none;
       width: 100px; }
-  /* line 294, sass/style.scss */
+  /* line 447, sass/style.scss */
   #search-container input[type=submit] {
     background: url(images/icon-search.svg);
     width: 18px;
@@ -2408,12 +2544,12 @@ button, .button {
     border: none;
     vertical-align: bottom; }
 
-/* line 306, sass/style.scss */
+/* line 459, sass/style.scss */
 #cart .text {
   text-transform: uppercase;
   font-weight: 700;
   font-size: .8em; }
-/* line 312, sass/style.scss */
+/* line 465, sass/style.scss */
 #cart .icon {
   background: url(images/icon-cart.svg) no-repeat;
   background-size: 100%;
@@ -2423,57 +2559,57 @@ button, .button {
   vertical-align: bottom;
   margin-left: .2rem; }
 
-/* line 323, sass/style.scss */
+/* line 476, sass/style.scss */
 #footer {
   border-bottom: 40px solid #f8e71d;
   margin: 3rem 0 0;
   clear: both;
   float: left;
   width: 100%; }
-  @media only screen and (max-width: 40.063em) {
-    /* line 323, sass/style.scss */
+  @media only screen and (max-width: 40em) {
+    /* line 476, sass/style.scss */
     #footer {
       text-align: center; } }
-  /* line 334, sass/style.scss */
+  /* line 487, sass/style.scss */
   #footer .footer-content {
     padding-bottom: 1rem; }
-  /* line 338, sass/style.scss */
+  /* line 491, sass/style.scss */
   #footer p {
     font-weight: 600;
     font-size: .75rem; }
-  /* line 343, sass/style.scss */
+  /* line 496, sass/style.scss */
   #footer .widget-title, #footer h4 {
     font-weight: 700;
     font-size: .9rem;
     margin: 0 0 .2rem; }
-  /* line 349, sass/style.scss */
+  /* line 502, sass/style.scss */
   #footer .widget-footer #social-links {
     float: left;
     margin: 0; }
-    @media only screen and (max-width: 40.063em) {
-      /* line 349, sass/style.scss */
+    @media only screen and (max-width: 40em) {
+      /* line 502, sass/style.scss */
       #footer .widget-footer #social-links {
         margin: 0 auto;
         float: none; } }
-  /* line 361, sass/style.scss */
+  /* line 514, sass/style.scss */
   #footer .widget-footer.border-bottom::after {
     border-bottom: 1px solid #222;
     content: '';
     width: 30%;
     display: inline-block; }
-  /* line 370, sass/style.scss */
+  /* line 523, sass/style.scss */
   #footer .menu li {
     display: inline;
     float: left;
     width: 33.3%;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem; }
-    /* line 377, sass/style.scss */
+    /* line 530, sass/style.scss */
     #footer .menu li a {
       font-weight: 700;
       font-size: .85rem;
       text-transform: uppercase; }
-    /* line 383, sass/style.scss */
+    /* line 536, sass/style.scss */
     #footer .menu li::after {
       border-bottom: 1px solid #222;
       content: '';
@@ -2485,76 +2621,62 @@ button, .button {
 /* ==========================================================================
    Homepage Content
    ========================================================================== */
-/* line 401, sass/style.scss */
+/* line 554, sass/style.scss */
 #home-gallery {
   position: relative;
   float: left;
   width: 100%;
   background: white;
   overflow: hidden; }
-  /* line 409, sass/style.scss */
+  /* line 562, sass/style.scss */
   #home-gallery .text {
     position: absolute;
     z-index: 1000;
     float: left;
     width: 100%;
     top: 3rem; }
-    @media only screen and (min-width: 40.063em) {
-      /* line 409, sass/style.scss */
+    @media only screen and (min-width: 40em) {
+      /* line 562, sass/style.scss */
       #home-gallery .text {
         top: 5rem; } }
     @media only screen and (min-width: 60em) {
-      /* line 409, sass/style.scss */
+      /* line 562, sass/style.scss */
       #home-gallery .text {
         top: 10rem; } }
-  /* line 426, sass/style.scss */
+  /* line 579, sass/style.scss */
   #home-gallery .row {
     position: relative; }
-  /* line 430, sass/style.scss */
+  /* line 583, sass/style.scss */
   #home-gallery .inner {
     background: transparent;
     text-align: center;
     border-bottom: none;
     width: 100%; }
-    @media only screen and (min-width: 40.063em) {
-      /* line 430, sass/style.scss */
+    @media only screen and (min-width: 40em) {
+      /* line 583, sass/style.scss */
       #home-gallery .inner {
         width: 60%;
         margin: 0 auto; } }
-  /* line 442, sass/style.scss */
+  /* line 595, sass/style.scss */
   #home-gallery h1, #home-gallery h2 {
     text-transform: uppercase;
     color: white;
     font-weight: 700; }
-  /* line 448, sass/style.scss */
+  /* line 601, sass/style.scss */
   #home-gallery h1 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0;
     letter-spacing: .4rem; }
-    @media only screen and (min-width: 40.063em) {
-      /* line 448, sass/style.scss */
-      #home-gallery h1 {
-        font-size: 3rem;
-        letter-spacing: 1rem; } }
-  /* line 459, sass/style.scss */
+  /* line 607, sass/style.scss */
   #home-gallery h2 {
     font-size: .7rem;
     letter-spacing: .2rem; }
-    @media only screen and (min-width: 40.063em) {
-      /* line 459, sass/style.scss */
-      #home-gallery h2 {
-        font-size: .9rem;
-        letter-spacing: .9rem; } }
-  /* line 469, sass/style.scss */
+  /* line 612, sass/style.scss */
   #home-gallery .slides .img {
     position: relative;
     z-index: 0;
     width: 100%; }
-  @media only screen and (max-width: 40.063em) {
-    /* line 476, sass/style.scss */
-    #home-gallery .flex-control-nav {
-      display: none; } }
-  /* line 480, sass/style.scss */
+  /* line 618, sass/style.scss */
   #home-gallery .scroll {
     position: absolute;
     bottom: 1rem;
@@ -2562,22 +2684,44 @@ button, .button {
     text-align: center;
     left: 0;
     right: 0; }
-    /* line 488, sass/style.scss */
+    /* line 626, sass/style.scss */
     #home-gallery .scroll .icon-scroll {
       background: url(images/icon-scroll.svg) no-repeat;
       width: 30px;
       height: 46px;
       display: block;
       margin: 0 auto; }
-    /* line 496, sass/style.scss */
+    /* line 634, sass/style.scss */
     #home-gallery .scroll small {
       text-align: center;
       font-size: 50%;
       color: white;
       clear: both;
       letter-spacing: .6rem; }
+  @media only screen and (min-width: 40em) {
+    /* line 644, sass/style.scss */
+    #home-gallery h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1rem; }
+    /* line 649, sass/style.scss */
+    #home-gallery h2 {
+      font-size: .8rem;
+      letter-spacing: .9rem; } }
+  @media only screen and (min-width: 60em) {
+    /* line 656, sass/style.scss */
+    #home-gallery h1 {
+      font-size: 3rem;
+      letter-spacing: 1rem; }
+    /* line 661, sass/style.scss */
+    #home-gallery h2 {
+      font-size: .9rem;
+      letter-spacing: .9rem; } }
+  @media only screen and (max-width: 40em) {
+    /* line 668, sass/style.scss */
+    #home-gallery .flex-direction-nav {
+      display: none; } }
 
-/* line 506, sass/style.scss */
+/* line 673, sass/style.scss */
 #primary {
   float: left;
   width: 100%;
@@ -2585,24 +2729,24 @@ button, .button {
   background: url("images/repeat-form.jpg") repeat;
   position: relative; }
   @media only screen and (min-width: 60em) {
-    /* line 506, sass/style.scss */
+    /* line 673, sass/style.scss */
     #primary {
       float: left;
       width: 100%;
       padding: 8rem 0 8rem; } }
-  /* line 518, sass/style.scss */
+  /* line 685, sass/style.scss */
   #primary .primary-icons img {
     margin: 2.5rem .8rem; }
-  @media only screen and (max-width: 40.063em) {
-    /* line 516, sass/style.scss */
+  @media only screen and (max-width: 40em) {
+    /* line 683, sass/style.scss */
     #primary .primary-icons {
       text-align: center; }
-      /* line 526, sass/style.scss */
+      /* line 693, sass/style.scss */
       #primary .primary-icons img {
         float: none !important;
         margin: 2.5rem .5rem; } }
 
-/* line 535, sass/style.scss */
+/* line 702, sass/style.scss */
 #id-products {
   float: left;
   width: 100%;
@@ -2610,106 +2754,106 @@ button, .button {
   text-align: center;
   position: relative; }
   @media only screen and (min-width: 60em) {
-    /* line 535, sass/style.scss */
+    /* line 702, sass/style.scss */
     #id-products {
       float: left;
       width: 100%;
       padding: 3rem 0 1rem; } }
-  /* line 545, sass/style.scss */
+  /* line 712, sass/style.scss */
   #id-products.line-yellow:after {
     top: -10%; }
     @media only screen and (max-width: 64em) {
-      /* line 545, sass/style.scss */
+      /* line 712, sass/style.scss */
       #id-products.line-yellow:after {
         height: 10%;
         top: -5%; } }
-  /* line 554, sass/style.scss */
+  /* line 721, sass/style.scss */
   #id-products .title {
     margin: 0 0 2rem; }
-    /* line 557, sass/style.scss */
+    /* line 724, sass/style.scss */
     #id-products .title h1 {
       margin-bottom: 1rem; }
       @media only screen and (min-width: 60em) {
-        /* line 557, sass/style.scss */
+        /* line 724, sass/style.scss */
         #id-products .title h1 {
           margin-left: 3rem;
           margin-bottom: 3rem; } }
     @media only screen and (min-width: 60em) {
-      /* line 566, sass/style.scss */
+      /* line 733, sass/style.scss */
       #id-products .title span {
         margin-left: 4rem; } }
-  /* line 573, sass/style.scss */
+  /* line 740, sass/style.scss */
   #id-products .products {
     margin: 2rem 0 0;
     float: left;
     width: 100%; }
-    /* line 580, sass/style.scss */
+    /* line 747, sass/style.scss */
     #id-products .products .info h3 {
       font-weight: 700;
       text-transform: uppercase;
       margin-bottom: .3rem; }
-    /* line 586, sass/style.scss */
+    /* line 753, sass/style.scss */
     #id-products .products .info .price {
       font-size: .85rem;
       font-weight: 700;
       letter-spacing: .1rem; }
-    /* line 593, sass/style.scss */
+    /* line 760, sass/style.scss */
     #id-products .products .other-button {
       margin: .5rem 0 0; }
-    /* line 597, sass/style.scss */
+    /* line 764, sass/style.scss */
     #id-products .products img {
       max-height: 200px; }
-    /* line 601, sass/style.scss */
+    /* line 768, sass/style.scss */
     #id-products .products li .inner {
       margin: 0 0 1.5rem; }
     @media only screen and (min-width: 64em) {
-      /* line 607, sass/style.scss */
+      /* line 774, sass/style.scss */
       #id-products .products li:nth-child(3) {
         margin: -2rem 0 0; }
-        /* line 611, sass/style.scss */
+        /* line 778, sass/style.scss */
         #id-products .products li:nth-child(3) img {
           max-height: 300px; } }
 
-/* line 619, sass/style.scss */
+/* line 786, sass/style.scss */
 #id-suscribe {
   float: left;
   width: 100%;
   padding: 3rem 0 5rem; }
-  /* line 622, sass/style.scss */
+  /* line 789, sass/style.scss */
   #id-suscribe p {
     text-align: center;
     margin: 0 auto; }
     @media only screen and (min-width: 60em) {
-      /* line 622, sass/style.scss */
+      /* line 789, sass/style.scss */
       #id-suscribe p {
         width: 50%; } }
-  /* line 631, sass/style.scss */
+  /* line 798, sass/style.scss */
   #id-suscribe form {
     text-align: center;
     margin: 1rem 0; }
-    /* line 635, sass/style.scss */
+    /* line 802, sass/style.scss */
     #id-suscribe form input[type="email"] {
       background: #f8e71d;
       padding: .5rem;
       font-size: 2rem;
       border: none;
       width: 70%; }
-      /* line 642, sass/style.scss */
+      /* line 809, sass/style.scss */
       #id-suscribe form input[type="email"]:focus {
         outline: none;
         opacity: .8; }
-    /* line 648, sass/style.scss */
+    /* line 815, sass/style.scss */
     #id-suscribe form input[type="submit"] {
       background: #222;
       padding: .5rem;
       font-size: 2rem;
       border: none;
       color: white; }
-      /* line 655, sass/style.scss */
+      /* line 822, sass/style.scss */
       #id-suscribe form input[type="submit"]:hover {
         background: black; }
 
-/* line 662, sass/style.scss */
+/* line 829, sass/style.scss */
 #id-blog {
   float: left;
   width: 100%;
@@ -2718,45 +2862,45 @@ button, .button {
   text-align: center;
   position: relative; }
   @media only screen and (min-width: 60em) {
-    /* line 662, sass/style.scss */
+    /* line 829, sass/style.scss */
     #id-blog {
       float: left;
       width: 100%;
       padding: 4rem 0 5rem; } }
-  /* line 674, sass/style.scss */
+  /* line 841, sass/style.scss */
   #id-blog .button {
     display: inline-block;
     margin: 0 auto 1rem; }
-  /* line 679, sass/style.scss */
+  /* line 846, sass/style.scss */
   #id-blog .title {
     text-align: center;
     margin: 0 auto; }
   @media only screen and (min-width: 60em) {
-    /* line 685, sass/style.scss */
+    /* line 852, sass/style.scss */
     #id-blog .title {
       position: absolute;
       top: 10%;
       left: 0;
       right: 0; }
-      /* line 691, sass/style.scss */
+      /* line 858, sass/style.scss */
       #id-blog .title h1 {
         width: 30%;
         margin: 0 auto; }
-      /* line 696, sass/style.scss */
+      /* line 863, sass/style.scss */
       #id-blog .title .button {
         margin: 1rem auto; } }
 
 @media only screen and (min-width: 60em) {
-  /* line 705, sass/style.scss */
+  /* line 872, sass/style.scss */
   .home #blog-items li:nth-child(2) {
     margin: 12rem 0 0; } }
-/* line 711, sass/style.scss */
+/* line 878, sass/style.scss */
 .home #blog-items li:nth-child(2) .post-thumbnail {
   position: relative;
   display: block;
   max-width: 352px;
   margin: 0 auto; }
-/* line 718, sass/style.scss */
+/* line 885, sass/style.scss */
 .home #blog-items li:nth-child(2) .post-thumbnail::before {
   content: '';
   position: absolute;
@@ -2767,15 +2911,15 @@ button, .button {
   border-top: 8px solid #f8e71d;
   width: 80%;
   height: 85%; }
-/* line 731, sass/style.scss */
+/* line 898, sass/style.scss */
 #blog-items .inner {
   text-align: center;
   margin: 0 0 2rem; }
   @media only screen and (min-width: 60em) {
-    /* line 731, sass/style.scss */
+    /* line 898, sass/style.scss */
     #blog-items .inner {
       margin: 0; } }
-  /* line 739, sass/style.scss */
+  /* line 906, sass/style.scss */
   #blog-items .inner h2 {
     text-transform: uppercase;
     font-weight: 700;
@@ -2783,12 +2927,12 @@ button, .button {
     margin: .2rem auto;
     font-size: 1rem;
     letter-spacing: .1rem; }
-  /* line 748, sass/style.scss */
+  /* line 915, sass/style.scss */
   #blog-items .inner a.button-simple {
     text-transform: uppercase;
     font-weight: 700;
     font-size: .65rem; }
-    /* line 753, sass/style.scss */
+    /* line 920, sass/style.scss */
     #blog-items .inner a.button-simple::before {
       content: '';
       display: block;
@@ -2796,11 +2940,11 @@ button, .button {
       width: 40%;
       clear: both;
       margin: .6rem auto; }
-  /* line 763, sass/style.scss */
+  /* line 930, sass/style.scss */
   #blog-items .inner img {
     max-width: 100%; }
 
-/* line 769, sass/style.scss */
+/* line 936, sass/style.scss */
 #id-social {
   float: left;
   width: 100%;
@@ -2808,29 +2952,29 @@ button, .button {
   background: url("images/repeat-form.jpg") repeat;
   text-align: center;
   position: relative; }
-  /* line 775, sass/style.scss */
+  /* line 942, sass/style.scss */
   #id-social .title {
     width: 40%;
     margin: 0 auto 2rem;
     text-align: center; }
-    /* line 780, sass/style.scss */
+    /* line 947, sass/style.scss */
     #id-social .title h1 {
       margin: 0; }
-      /* line 783, sass/style.scss */
+      /* line 950, sass/style.scss */
       #id-social .title h1 span {
         color: #f8e71d; }
-    /* line 789, sass/style.scss */
+    /* line 956, sass/style.scss */
     #id-social .title p {
       font-weight: bold;
       letter-spacing: .2rem;
       color: #515151;
       font-size: .7rem; }
-  /* line 797, sass/style.scss */
+  /* line 964, sass/style.scss */
   #id-social .bottom {
     position: relative;
     width: 100%;
     float: left; }
-    /* line 802, sass/style.scss */
+    /* line 969, sass/style.scss */
     #id-social .bottom .hashtag {
       margin: 0;
       font-weight: bold;
@@ -2840,55 +2984,63 @@ button, .button {
       position: relative;
       z-index: 1; }
 
-/* line 815, sass/style.scss */
+/* line 982, sass/style.scss */
 #polaroid-ul {
   border-top: 8px solid #f8e71d; }
-  /* line 818, sass/style.scss */
+  /* line 985, sass/style.scss */
   #polaroid-ul li {
     margin-top: -18px;
     float: left;
     display: inline-block !important;
     width: 50%; }
     @media only screen and (min-width: 60em) {
-      /* line 818, sass/style.scss */
+      /* line 985, sass/style.scss */
       #polaroid-ul li {
         width: 33%; } }
-    /* line 828, sass/style.scss */
+    /* line 995, sass/style.scss */
     #polaroid-ul li a {
       float: left;
       width: 100%; }
-    /* line 833, sass/style.scss */
+    /* line 1000, sass/style.scss */
     #polaroid-ul li img {
       min-width: 256px; }
       @media only screen and (max-width: 60em) {
-        /* line 833, sass/style.scss */
+        /* line 1000, sass/style.scss */
         #polaroid-ul li img {
           margin: 0 !important;
           width: 100% !important;
           min-width: inherit; } }
-    /* line 843, sass/style.scss */
+    /* line 1010, sass/style.scss */
     #polaroid-ul li:hover {
       opacity: .8; }
-  /* line 848, sass/style.scss */
+  /* line 1015, sass/style.scss */
   #polaroid-ul li:nth-child(3n) img {
     top: 0 !important; }
 
 /* ==========================================================================
    Pages Content
    ========================================================================== */
-/* line 862, sass/style.scss */
+/* line 1028, sass/style.scss */
 .entry-content img.alignright {
   text-align: right;
   float: right; }
-/* line 867, sass/style.scss */
+/* line 1033, sass/style.scss */
 .entry-content img.alignleft {
   text-align: left;
   float: left; }
 
+/* line 1040, sass/style.scss */
+.post-thumbnail img {
+  max-width: 100%;
+  height: auto; }
+
+/* ==========================================================================
+   Blog Content
+   ========================================================================== */
 /* ==========================================================================
    Helpers & Transitions
    ========================================================================== */
-/* line 880, sass/style.scss */
+/* line 1054, sass/style.scss */
 .icon-arrow {
   background: url(images/icon-arrow.svg);
   width: 28px;
@@ -2897,18 +3049,18 @@ button, .button {
   text-align: center;
   margin: 3rem auto 1rem; }
 
-/* line 889, sass/style.scss */
+/* line 1063, sass/style.scss */
 .line-yellow:after {
   content: "";
   position: absolute;
-  z-index: 1000;
+  z-index: 99;
   top: -16px;
   bottom: 0;
   left: 50%;
   height: 30%;
   border-left: 6px solid #f8e71d; }
 
-/* line 900, sass/style.scss */
+/* line 1074, sass/style.scss */
 .line-yellow-left:after {
   content: "";
   position: absolute;
@@ -2919,6 +3071,23 @@ button, .button {
   height: 400%;
   border-left: 6px solid #f8e71d; }
 
-/* ==========================================================================
-   Widgets & Plugins
-   ========================================================================== */
+/* line 1085, sass/style.scss */
+#search-container input[type=search] {
+  -webkit-transition: width .2s;
+  transition: width .2s; }
+
+/* line 1090, sass/style.scss */
+.products li img {
+  transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden; }
+
+/* line 1101, sass/style.scss */
+.products li:hover img {
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1.05, 1.05, 1.05);
+  transform: translate3d(0, 0, 0) scale3d(1.05, 1.05, 1.05); }

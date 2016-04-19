@@ -48,7 +48,7 @@ get_header(); ?>
 					</li>				
 					<?php } ?>
 				</ul>
-				<div class="scroll">
+				<div class="scroll show-for-large">
 					<span class="icon-scroll"></span>
 					<small>SCROLL DOWN</small>
 				</div>

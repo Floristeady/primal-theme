@@ -34,8 +34,24 @@
 	<body <?php body_class(); ?>>
 				
 		<header id="header">
+			
+			<div id="inner-wrap">
+		       <nav id="mobile-access" role="navigation" class="">
+		          <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'mobile' ) ); ?>
+		          <a href="javascript:void(0)" id="nav-close-btn"></a>
+		       </nav>      
+		       <div class="drawer-close drawer-back"></div>
+		    </div> 
 		
 			<div class="header-top">
+				
+				<a href="javascript:void(0)" id="button-mobile" class="icon-menu">
+	               <span class="bars">
+	                 <div class="top-bar-button"></div>
+	                 <div class="middle-bar"></div>
+	                 <div class="bottom-bar"></div>
+	               </span>
+	            </a>
 				
 				<?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
 					<div class="widget-header">

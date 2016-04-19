@@ -17,7 +17,7 @@
 @import 'normalize';
 
 // Here we import our partials
-@import "_partials/variables";
+@import "_partials/variables&mixin";
 @import "_partials/typography";
 @import "_partials/grid";
 @import "_partials/visibility";
@@ -136,10 +136,14 @@ button, .button {
 			color: #282827;
 			font-weight: 700;
 			text-transform: uppercase;
-			font-size: 1.1em;
+			font-size: .95em;
 			padding: 0px 10px;
 			margin: 0px 4px;
 			position: relative;
+			
+			@media only screen and (min-width: $medium-width) {
+				font-size: 1.1em;
+			}
 			
 			&:hover:after {
 				position: absolute;
@@ -163,11 +167,24 @@ button, .button {
 	#menu-menu-derecha {
 		float: left;
 	}
+	
+	@media only screen and (max-width: $small-width) {
+		.menu {
+			display: none;
+		}
+	}
 }
 
 #social-links {
 	margin: 0 1em;
 	float: right;
+	
+	.header-main & {
+			
+		@media only screen and (max-width: $xlarge-width) {
+			display: none;
+		}
+	}
 	
 	li {
 		display: inline-block;
@@ -185,8 +202,7 @@ button, .button {
 		    
 		    &:hover {
 			    opacity: .8;
-		    }
-		     
+		    }	     
 		}
 		
 		&.facebook-link a {
@@ -206,6 +222,129 @@ button, .button {
 		}
 	}
 }
+
+#button-mobile {
+   padding: 18px 10px 10px 16px;
+   float: left;
+   width: 10%;
+   display:none;
+  
+    .bars {
+	    font-size: 1.2em;
+	    float: left;
+	    margin-right: .3em;
+	    
+	    div {
+		    width: 1.1em;
+		    height: 3px;
+		    margin-bottom: 3px;
+		    background: #282827;
+		    border-radius: 1px;
+		}
+	}
+	
+    @media only screen and (max-width: $small-width) {
+	    display: block;
+    }
+}
+
+#inner-wrap {
+    z-index: 999;
+
+	&.active {
+	    position: fixed;
+	    height: 140%;
+	    width: 100%;
+	    background-attachment: fixed;
+	    overflow-y: scroll;
+	    –webkit-overflow-scrolling: touch;
+	}
+}
+
+.drawer-back {
+  background: rgba(0, 0, 0, 0.3);
+  height: 180%;
+  float: left;
+  width: 100%;
+  background-attachment: fixed;
+}
+
+#mobile-access {
+	background: #F8F9FA;
+    background-attachment: fixed;
+    position: absolute;
+    padding: 2em 0;
+    width: 75%;
+    height: 180%;
+    z-index: 1000;
+    left: -75%;
+    top:0;
+
+	-webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform: translate3d(0);
+    -moz-transform: translate3d(0);
+    transform: translate3d(0);
+
+	&.active {
+	    -webkit-transform: translate3d(100%, 0, 0);
+	    -moz-transform: translate3d(100%, 0, 0);
+	    transform: translate3d(100%, 0, 0);
+	}
+	
+	ul {
+	  margin:2em 0 0;
+	  
+	   li {
+		    margin: 0 0 0.7em;
+		    
+			a {
+			    font-size: .9rem;
+			    padding: 0 0 0 1.7em;
+			    display: inline-block;
+			    width: 100%;
+			    text-transform: uppercase;
+			    font-weight: 700;
+			}
+		}
+	}
+}
+
+#nav-close-btn {
+    position: absolute;
+    border-radius: 2px;
+    float: left;
+    top: 9px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    
+	&:before {
+	    -webkit-transform: rotate(45deg);
+	    -moz-transform: rotate(45deg);
+	    transform: rotate(45deg);
+	    left: 2px;
+	}
+	
+	&:after {
+	    -webkit-transform: rotate(-45deg);
+	    -moz-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	    right: 2px;
+	}
+	
+	&:before, &:after {
+	    content: '';
+	    position: absolute;
+	    width: 20px;
+	    height: 2px;
+	    background-color: #282827;
+	    border-radius: 2px;
+	    top: 16px;
+	}
+}
+
 
 
 /* ==========================================================================
@@ -245,16 +384,26 @@ button, .button {
 #logo-container {
 	position: relative;
 	text-align: center;
-	width: 15%;
     margin: 0 auto;
-	
-	.logo {
-		position: absolute;
+	height: 80px;
+		
+	.logo {	
 		text-align: center;
-		top: -2.5em;
-		left: 0;
-		right: 0;
+		position: relative;
 		z-index: 100;
+		top: -2.5em;
+	}
+	
+	@media only screen and (min-width: $small-width) {		
+		width: 15%;
+		height: auto;
+	
+		.logo {
+			position: absolute;
+			
+			left: 0;
+			right: 0;
+		}
 	}
 }
 
@@ -262,6 +411,10 @@ button, .button {
 	float: right;
 	padding: .6rem 0;
 	margin-right: 1rem;
+	
+	@media only screen and (max-width: $small-width) {
+		display: none;
+	}
 	
 	form {
 		float: left;
@@ -275,7 +428,7 @@ button, .button {
 		margin-left: .5rem;
 		padding-top: .2em;
 	}
-	
+
 	input[type=search] {
 		padding: .6rem .4rem .2rem;
 		text-transform: uppercase;
@@ -446,35 +599,20 @@ button, .button {
 	}
 	
 	h1 {
-		font-size: 1rem;
+		font-size: 1.1rem;
 		margin: 0;
 		letter-spacing: .4rem;
-		
-		@media only screen and (min-width: $small-width) {
-			font-size: 3rem;
-			letter-spacing: 1rem;
-		}
 	}
 	
 	h2 {
 		font-size: .7rem;
 		letter-spacing: .2rem;
-		
-		@media only screen and (min-width: $small-width) {
-			font-size: .9rem;
-			letter-spacing: .9rem;
-		}
 	}
 	
 	.slides .img {
 		position: relative;
 		z-index: 0;
 		width: 100%;
-	}
-	
-	@media only screen and (max-width: $small-width) {
-		.flex-control-nav {
-			display: none;}
 	}
 	
 	.scroll {
@@ -500,6 +638,35 @@ button, .button {
 			clear: both;
 			letter-spacing: .6rem;
 		}	
+	}
+	
+	@media only screen and (min-width: $small-width) {
+		h1 {
+			font-size: 1.5rem;
+			letter-spacing: 1rem;
+		}
+		
+		h2 {
+			font-size: .8rem;
+			letter-spacing: .9rem;
+		}
+	}
+	
+	@media only screen and (min-width: $medium-width) {
+		h1 {
+			font-size: 3rem;
+			letter-spacing: 1rem;
+		}
+		
+		h2 {
+			font-size: .9rem;
+			letter-spacing: .9rem;
+		}
+	}
+	
+	@media only screen and (max-width: $small-width) {
+		.flex-direction-nav {
+			display: none;}
 	}
 }
 
@@ -856,8 +1023,7 @@ button, .button {
    Pages Content
    ========================================================================== */
 
-.entry-content {
-	
+.entry-content {	
 	img {
 		&.alignright {
 			text-align: right;
@@ -870,7 +1036,15 @@ button, .button {
 		}
 	}
 }
- 
+
+.post-thumbnail img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ==========================================================================
+   Blog Content
+   ========================================================================== */
 
    
 /* ==========================================================================
@@ -889,7 +1063,7 @@ button, .button {
 .line-yellow:after {
     content:"";
     position: absolute;
-    z-index: 1000;
+    z-index: 99;
     top: -16px;
     bottom: 0;
     left: 50%;
@@ -907,7 +1081,26 @@ button, .button {
     height: 400%;
     border-left: 6px solid $primary-color;
 }
+
+#search-container input[type=search] {
+	-webkit-transition: width .2s;
+    transition: width .2s;
+}
+  
+.products li img {
+	transform-style: preserve-3d;
+    -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+}
+
+.products li:hover img {
+	-webkit-transform: translate3d(0, 0, 0) scale3d(1.05, 1.05, 1.05);
+	transform: translate3d(0, 0, 0) scale3d(1.05, 1.05, 1.05);
+}
+
    
-/* ==========================================================================
-   Widgets & Plugins
-   ========================================================================== */
