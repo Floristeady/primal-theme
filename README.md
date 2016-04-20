@@ -20,9 +20,19 @@ $ cd /yourproject
 $ compass watch
 
 
-== Menu ==
+== Menu ID ==
 
 id-products
 id-blog
 id-suscription
 id-social
+
+== Plugins ==
+
+Advanced Custom Fields
+Advanced Custom Fields: Repeater Field
+Simply Instagram
+
+== Other ==
+
+Grid and Visibility - Foundation 6
