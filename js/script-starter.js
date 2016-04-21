@@ -128,7 +128,7 @@ jQuery(function ($) {
 	
 	    page.hide();
 	    
-        $('a[href^=#]').bind("click", jump);
+        //$('a[href^=#]').bind("click", jump);
 
         if (location.hash){
             setTimeout(function(){
