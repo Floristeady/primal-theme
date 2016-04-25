@@ -5,33 +5,33 @@ Programmed by: Florencia Rosenfeld & Corpspin
 
 == Description ==
 
-License: GNU General Public License v2 or later
+License: GNU General Public License v2 or later<br />
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Install ==
 
-$ gem update --system
-$ gem install sass
-$ gem install compass
+$ gem update --system<br />
+$ gem install sass<br />
+$ gem install compass<br />
 
 == Run ==
 
-$ cd /yourproject
+$ cd /yourproject<br />
 $ compass watch
 
 
 == Menu ID ==
 
-id-products
-id-blog
-id-suscription
-id-social
+id-products<br />
+id-blog<br />
+id-suscription<br />
+id-social<br />
 
 == Plugins ==
 
-Advanced Custom Fields
-Advanced Custom Fields: Repeater Field
-Simply Instagram
+Advanced Custom Fields<br />
+Advanced Custom Fields: Repeater Field<br />
+Simply Instagram<br />
 
 == Other ==
 
