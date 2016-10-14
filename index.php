@@ -15,13 +15,15 @@ get_header(); ?>
 	
 	if ( have_posts() ) : ?>
 	
-	<div class="row">
+	<div class="row page">
 	
 		<?php $posts_page = get_option( 'page_for_posts' );
 			$content = get_post( $posts_page )->post_excerpt; 
 			$title   = get_post( $posts_page )->post_title; ?>
-		<h1 class="entry-title"><?php echo $title; ?></h1>
-	
+		<header class="entry-header">
+			<h1 class="entry-title"><?php echo $title; ?></h1>
+		</header>
+
 		<ul id="blog-items" class="small-up-1 medium-up-2 large-up-3">
 
 		<?php while ( have_posts() ) : the_post(); ?>

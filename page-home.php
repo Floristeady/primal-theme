@@ -54,21 +54,36 @@ get_header(); ?>
 				</div>
 		</section>
 		<?php } ?>
+
+		<?php include('inc/featured-products.php'); ?>
+
+		<?php include('inc/section-tienda.php'); ?> <!-- Add by Francisco -->
+
+		<?php include('inc/section-super.php'); ?> <!-- Add by Francisco -->
+
+		<?php include('inc/section-services.php'); ?> <!-- Add by Francisco -->
+
+		<?php include('inc/section-detox.php'); ?> <!-- Add by Francisco -->
 		
 		<section id="primary" class="home-section line-yellow">
 			<div class="entry-content row">
 				<?php the_content(); ?>
 			</div>
-		</section>		
-		
-		<?php include('inc/featured-products.php'); ?>
-				
-		<?php include('inc/section-subscribe.php'); ?>
-		
-		<?php include('inc/featured-blog.php'); ?>
-		
+
+			<div class="entry-content row text-center">
+				<a href="<?php echo get_permalink( get_page_by_path( 'acerca-de-primal' ) ) ?>" class="button">
+					<?php _e('Ver Más','primal') ?>
+				</a>
+			</div>
+		</section>
+
+		<?php include('inc/club-primal.php'); ?>
+
+		<?php include('inc/primal-soul.php'); ?>
+
 		<?php include('inc/section-social.php'); ?>
-				
+		
+		<?php include('inc/featured-blog.php'); ?>				
 	<?php endwhile; ?>
 
 </div><!-- #content -->

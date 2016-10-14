@@ -10,21 +10,19 @@
 get_header(); ?>
 
 <div id="content" class="site-content" role="main">
-
+	<div class="row">
 	<?php
 		
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'content');
 
-			primal_post_nav();
-
 			if ( comments_open() || get_comments_number() ) {
 				comments_template();
 			}
 		endwhile;
 	?>
-
+	</div>
 </div><!-- #content -->
 
 <?php get_sidebar(); ?>

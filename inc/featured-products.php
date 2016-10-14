@@ -4,10 +4,10 @@
 			<div class="title">
 				<h1>NUESTROS <span>PRODUCTOS</span></h1>
 			</div>
-		
+
 			<script type="text/html" data-template="featured-products">
 			  %{items}
-			    <li class="column">
+			    <div class="column">
 			    	<div class="inner">
 				      %{hasImage}
 				      <span class="img">
@@ -30,25 +30,39 @@
 
 				    <a class="other-button" href="%{ href }">Comprar</a>
 			    	</div>
-			    </li>
+			    </div>
 			  %{/items}
 			</script>
-			
-		
+
 			<?php //See http://bootic.github.io/bootic_search_widget.js for more options and examples ?>
-			<ul class="products small-up-2 medium-up-3 large-up-5" 
-			  data-bootic_widget="ProductSearch" 
-			  data-template="featured-products" 
-			  data-config_per_page="5" 
-			  data-config_collections="featured" 
-			  data-config_shop_subdomains="primal"  
-			  data-autoload="true">
-			</ul>	
-			
+			<section id="products-gallery" class="flexslider">
+				<ul class="slides">
+					<li class="products small-up-2 medium-up-3 large-up-5" 
+					  data-bootic_widget="ProductSearch" 
+					  data-template="featured-products" 
+					  data-config_per_page="5" 
+					  data-config_collections="featured" 
+					  data-config_shop_subdomains="primal"  
+					  data-autoload="true">
+					</li>
+
+					<li class="products small-up-2 medium-up-3 large-up-5" 
+					  data-bootic_widget="ProductSearch" 
+					  data-template="featured-products" 
+					  data-config_per_page="5" 
+					  data-config_collections="superalimentos" 
+					  data-config_shop_subdomains="primal"  
+					  data-autoload="true">
+					</li>
+				</ul>
+			</section>		
+		</div>
+
+		<div class="column medium-12 small-centered">
+			<a href="http://primal.bootic.net/products" class="button"><?php _e('Ir a la Tienda','primal') ?></a>
 		</div>
 		
 		<span class="icon-arrow"></span>
 	
 	</div>
-</section>
-		
+</section>		

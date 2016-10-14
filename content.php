@@ -11,10 +11,14 @@
 ?>
 
 <?php if ( is_single() ) : ?>
+<div class="navigation">
+	<div class="alignleft"><?php previous_post_link(); ?></div>
+	<div class="alignright"><?php next_post_link(); ?></div>
+</div>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
-		
 		<div class="entry-info">
 				
 			<?php  if ( !is_category() ) :  
@@ -23,33 +27,12 @@
 			
 		</div>
 		
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-			<?php
-				if ( 'post' == get_post_type() )
-					primal_posted_on();
-
-				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
-			?>
-			
-				   <?php if ( 'post' == get_post_type() ) : ?>
-					<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'primal' ), __( '1 Comment', 'primal' ), __( '% Comments', 'primal' ) ); ?></span>
-					<?php endif; ?>
-			<?php
-		    endif;
-
-				edit_post_link( __( 'Edit', 'primal' ), '<span class="edit-link">', '</span>' );
-			?>
-		</div><!-- .entry-meta -->
-		
-		<div class="entry-excerpt">
-		<?php the_excerpt();  ?>
-		</div>
-		
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>		
 	</header>
 	
+
 	<?php primal_post_thumbnail(); ?>
+	<p class="caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p>
 
 	<?php if ( is_search() ) : ?>
 	<div class="entry-summary">
@@ -75,7 +58,7 @@
 
 <?php else : ?>
 
-<li id="post-<?php the_ID(); ?>" class="column">
+<li id="post-<?php the_ID(); ?>" class="column small-4">
 
 	<div class="inner">
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>">			

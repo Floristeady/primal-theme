@@ -12,10 +12,12 @@
 ?>
 	
 	<footer id="footer" class="site-footer" role="contentinfo">
-		<div class="footer-content row">
-			
-		<?php get_sidebar( 'footer' ); ?>
-		
+		<div class="footer-content">
+			<div class="medium-12 column">
+			<div class="column">
+			<?php get_sidebar( 'footer' ); ?>
+			</div>
+			</div>
 		</div>
 	</footer><!-- footer -->
 	

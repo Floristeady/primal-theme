@@ -24,7 +24,7 @@
 ?>
 
 <?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
-					<ul class="widget-footer column medium-4 large-2">
+					<ul class="widget-footer column large-12">
 						<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
 					</ul>
 <?php endif; ?>
@@ -38,6 +38,12 @@
 <?php if ( is_active_sidebar( 'third-footer-widget-area' ) ) : ?>
 					<ul class="widget-footer column medium-4 large-2 border-bottom">
 						<?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
+					</ul>
+<?php endif; ?>
+
+<?php if ( is_active_sidebar( 'five-footer-widget-area' ) ) : ?>
+					<ul class="widget-footer column medium-4 large-2 border-bottom">
+						<?php dynamic_sidebar( 'five-footer-widget-area' ); ?>
 					</ul>
 <?php endif; ?>
 

@@ -18,6 +18,8 @@ if ( post_password_required() ) {
 }
 ?>
 
+
+<div class="small-12 medium-8 medium-offset-4 columns">
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
@@ -64,3 +66,5 @@ if ( post_password_required() ) {
 	<?php comment_form(); ?>
 
 </div><!-- #comments -->
+</div>
+

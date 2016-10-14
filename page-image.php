@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Plantilla con imagen
  *
  * @package WordPress
  * @subpackage primal
@@ -8,7 +9,7 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+<div id="content" class="site-content page-with-image">
 
 		<?php
 			while ( have_posts() ) : the_post(); ?>
@@ -19,11 +20,16 @@ get_header(); ?>
 				?>
 				
 				<div class="row">
-					<div class="medium-4 columns">
+					<div class="medium-5 columns">
+						<?php if (get_field('page_inside_image') ){?>
+						<?php $attachment_id = get_field('page_inside_image'); ?>
+						<?php echo wp_get_attachment_image( $attachment_id, 'original'); ?>
+						<?php } else { ?>
 						<?php the_post_thumbnail(); ?>
+						<?php }  ?>
 					</div>
 					
-					<div class="medium-8 columns">
+					<div class="medium-7 columns">
 						<div class="entry-content">
 							<?php
 								the_content();

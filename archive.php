@@ -18,8 +18,8 @@ get_header(); ?>
 
 	<?php if ( have_posts() ) : ?>
 
-	<header class="page-header">
-		<h1 class="page-title">
+	<header class="entry-header">
+		<h1 class="entry-title">
 			<?php
 				if ( is_day() ) :
 					printf( __( 'Daily Archives: %s', 'primal' ), get_the_date() );
@@ -38,6 +38,7 @@ get_header(); ?>
 		</h1>
 	</header>
 
+	<ul id="blog-items" class="small-up-1 medium-up-2 large-up-3">
 	<?php
 			while ( have_posts() ) : the_post();
 			
@@ -53,6 +54,7 @@ get_header(); ?>
 
 		endif;
 	?>
+	</ul>
 </div>
 
 <?php get_sidebar(); ?>

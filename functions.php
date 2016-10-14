@@ -124,42 +124,7 @@ function primal_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'primal_excerpt_length' );
 
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and primal_continue_reading_link().
- *
- * @since primal 1.0
- */
-function primal_auto_excerpt_more( $more ) {
-	return ' &hellip;' . primal_continue_reading_link();
-}
-add_filter( 'excerpt_more', 'primal_auto_excerpt_more' );
 
-/**
- * Returns a "Continue Reading" link for excerpts
- *
- * @since primal 1.0
- * @return string "Continue Reading" link
- */
-function primal_continue_reading_link() {
-	return '<a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'primal' ) . '</a>';
-}
-
-/**
- * Adds a pretty "Continue Reading" link to custom post excerpts.
- *
- * To override this link in a child theme, remove the filter and add your own
- * function tied to the get_the_excerpt filter hook.
- *
- * @since primal 1.0
- * @return string Excerpt with a pretty "Continue Reading" link
- */
-function primal_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= primal_continue_reading_link();
-	}
-	return $output;
-}
-add_filter( 'get_the_excerpt', 'primal_custom_excerpt_more' );
 
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
@@ -186,6 +151,39 @@ function primal_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Header Widget', 'primal' ),
 		'id' => 'header-widget-area',
+		'description' => __( 'Header Widget', 'primal' ),
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	// Header Widget. SUSCRIPCIÓN Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Header Suscription', 'primal' ),
+		'id' => 'header-widget-suscription',
+		'description' => __( 'Header Widget', 'primal' ),
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	// Header Widget. BLOG Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Header Blog', 'primal' ),
+		'id' => 'header-widget-blog',
+		'description' => __( 'Header Widget', 'primal' ),
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	// Header Widget. FAQ Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Header Faq', 'primal' ),
+		'id' => 'header-widget-faq',
 		'description' => __( 'Header Widget', 'primal' ),
 		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</div>',
@@ -241,6 +239,17 @@ function primal_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Fourth Footer Widget Area', 'primal' ),
 		'id' => 'fourth-footer-widget-area',
+		'description' => __( 'An optional widget area for your site footer', 'primal' ),
+		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	// Area 5, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Five Footer Widget Area', 'primal' ),
+		'id' => 'five-footer-widget-area',
 		'description' => __( 'An optional widget area for your site footer', 'primal' ),
 		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</div>',
@@ -559,6 +568,14 @@ function my_default_content( $post_content, $post ) {
     return $post_content;
 }
 add_filter( 'default_content', 'my_default_content', 10, 2 );
+
+/* ADD EXCERPT PAGE */
+
+add_action( 'init', 'my_add_excerpts_to_pages' );
+function my_add_excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
+}
+
 
 
 ?>

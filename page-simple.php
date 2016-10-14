@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Plantilla simple
  *
  * @package WordPress
  * @subpackage primal
@@ -19,11 +20,8 @@ get_header(); ?>
 				?>
 				
 				<div class="row">
-					<div class="medium-4 columns">
-						<?php the_post_thumbnail(); ?>
-					</div>
 					
-					<div class="medium-8 columns">
+					<div class="medium-12 columns">
 						<div class="entry-content">
 							<?php
 								the_content();

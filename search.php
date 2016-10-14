@@ -10,28 +10,31 @@
 get_header(); ?>
 
 <div id="content" class="site-content" role="main">
-
+	<div class="row page search">
 	<?php if ( have_posts() ) : ?>
 
-	<header class="page-header">
-		<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'primal' ), get_search_query() ); ?></h1>
-	</header>
+		<header class="entry-header">
+			<h1 class="entry-title"><?php printf( __( 'Resultados de: %s', 'primal' ), get_search_query() ); ?></h1>
+		</header>
 
-		<?php
-			while ( have_posts() ) : the_post();
-			
-				get_template_part( 'content', get_post_format() );
+		<ul id="blog-items" class="small-up-1 medium-up-2 large-up-3">
+			<?php
+				while ( have_posts() ) : the_post();
+				
+					get_template_part( 'content', get_post_format() );
 
-			endwhile;
+				endwhile;
 
-			primal_paging_nav();
+				primal_paging_nav();
 
-		else :
+			else :
 
-			get_template_part( 'content', 'none' );
+				get_template_part( 'content', 'none' );
 
-		endif;
-	?>
+			endif;
+		?>
+		</ul>
+	</div>
 
 </div><!-- #content -->
 

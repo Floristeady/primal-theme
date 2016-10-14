@@ -57,7 +57,34 @@ jQuery(function ($) {
 			    }
 		    }
 		});
+
+		$('#products-gallery').flexslider({
+		    animation: "fade",
+		    animationLoop: true,
+		    controlNav: false,
+		    directionNav: true,
+		    smoothHeight: true,
+		    prevText: "<i class='fa fa-chevron-left'></i>",
+		    nextText: "<i class='fa fa-chevron-right'></i>",
+		    start: function(slider){
+			     $('#products-gallery .inner').animate({
+				   opacity: 1 
+			    });
+			    
+			    if (!('.flexslider ul.slides li:only-child')){
+				     $('#products-gallery .inner').delay(500).animate({
+					   opacity: 1 
+				    }, 400);
+			    } else {
+				      $('#products-gallery .inner').delay(700).animate({
+					   opacity: 1 
+				    }, 400);
+
+			    }
+		    }
+		});
 	}
+
 
 	//scrollto section
 	function menuHome() { 
@@ -69,7 +96,7 @@ jQuery(function ($) {
 		// go to scroll section 
 	    function goToByScroll(target) {
 	        htmlbody.animate({
-	         scrollTop: $(target).offset().top+5
+	         scrollTop: $(target).offset().top-120
 	         }, 1500, 'easeInOutQuint');
 	         
 	        if(browserwidth <= mediumwidth) {
@@ -165,6 +192,30 @@ jQuery(function ($) {
 	    }); 
 	  
 	}
+	
+	function loadPage(){
+		//console.log(location.hash);
+        /*if(location.hash){
+            $(window).scrollTop(0); //stop jump to hash straight away
+            setTimeout(function(){
+                //stop jump to hash again a bit later
+                //for browser compatibility
+                $(window).scrollTop(0);
+            },1);
+        }*/
+        $(window).load(function(){
+            if(location.hash){
+                setTimeout(function(){
+                    //use page scroll to id scrollTo method
+                    //to animate page to location hash
+                    //$.mPageScroll2id("scrollTo",location.hash);
+                      htmlbody.animate({
+			         scrollTop: $(location.hash).offset().top-120
+			         }, 1500, 'easeInOutQuint');
+                },500);
+            }
+        });
+    }
 
 	/************************* 
 	Ejecución
@@ -172,6 +223,7 @@ jQuery(function ($) {
 
 	$(window).load(function() {
 	   onLoadAndResize();
+	   loadPage();
 	   
 	   if ($('body').hasClass('home')) {	
 			menuHome();
